@@ -24,7 +24,7 @@ eureka:
     instance-id: tensquare-base-9001
 
 info:
-  app.name: tensquare
+  app.name: tensquare-------
   company.name: www.panghu.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
