@@ -1,11 +1,19 @@
+spring:
+  profiles: 
+    active:
+      - dev
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
 server:
   port: 9001
 
-
 spring:
-  application:
-    name: tensquare-base
-  
+  profiles: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.0.100:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
@@ -23,9 +31,25 @@ eureka:
     prefer-ip-address: true
     instance-id: tensquare-base-9001
 
+---
+server:
+  port: 19001
 
-info:
-  app.name: tensquare
-  company.name: www.panghu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+spring:
+  profiles: test
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-base-9001
