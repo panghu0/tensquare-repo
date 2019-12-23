@@ -57,9 +57,17 @@ server:
 spring:
   profiles: dev
 
+eureka:
+  instance:
+    instance-id: tensquare-manager-9001
+
 ---
 server:
   port: 19011
 
 spring:
   profiles: test
+
+eureka:
+  instance:
+    instance-id: tensquare-manager-19001

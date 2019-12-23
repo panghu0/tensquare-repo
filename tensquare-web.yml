@@ -57,7 +57,9 @@ server:
 spring:
   profiles: dev
 
-
+eureka:
+  instance:
+    instance-id: tensquare-web-9012
 
 ---
 server:
@@ -65,3 +67,7 @@ server:
 
 spring:
   profiles: test
+
+eureka:
+  instance:
+    instance-id: tensquare-web-19012
