@@ -1,13 +1,11 @@
-spring:
-  application:
-    name: tensquare-eureka
-
 server:
   port: 6868
 
 spring:
-  profiles: dev
-  datasource:
+  application:
+    name: tensquare-eureka
+  rabbitmq:
+    host: 192.168.0.100
 
 eureka:
   client:
