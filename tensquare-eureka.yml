@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: tensquare-eureka
+  profiles:
+    active:
+      - dev
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 6868
+
+spring:
+  profiles: dev
+  datasource:
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
+
+
+---
+server:
+  port: 16868
+
+spring:
+  profiles: test
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
