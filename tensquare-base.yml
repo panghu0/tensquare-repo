@@ -5,6 +5,15 @@ spring:
     active:
       - dev
 
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+
+
 info:
   app.name: tensquare
   company.name: www.panghu.com
@@ -26,11 +35,7 @@ spring:
     show-sql: true
 
 eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:6868/eureka
   instance:
-    prefer-ip-address: true
     instance-id: tensquare-base-9001
 
 ---
@@ -49,9 +54,5 @@ spring:
     show-sql: true
 
 eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:6868/eureka
   instance:
-    prefer-ip-address: true
-    instance-id: tensquare-base-9001
+    instance-id: tensquare-base-19001

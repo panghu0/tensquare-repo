@@ -56,9 +56,6 @@ server:
 
 spring:
   profiles: dev
-  datasource:
-
-
 
 ---
 server:
