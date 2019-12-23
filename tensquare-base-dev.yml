@@ -2,15 +2,15 @@ server:
   port: 9001
 
 spring:
-  #application:
-  #  name: tensquare-base
+  application:
+    name: tensquare-base
   rabbitmq:
     host: 192.168.0.100
-  #datasource:
-   # driver-class-name: com.mysql.jdbc.Driver
-   # url: jdbc:mysql://192.168.0.100:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
-   # username: root
-   # password: root
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
   jpa:
     database: mysql
     show-sql: true
