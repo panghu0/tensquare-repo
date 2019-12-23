@@ -1,5 +1,7 @@
 spring:
-  profiles: 
+  application:
+    name: tensquare-base
+  profiles:
     active:
       - dev
 
