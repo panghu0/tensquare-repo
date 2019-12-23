@@ -1,5 +1,5 @@
 server:
-  port: 19001
+  port: 9001
 
 spring:
   application:
@@ -21,7 +21,7 @@ eureka:
       defaultZone: http://localhost:6868/eureka
   instance:
     prefer-ip-address: true
-    instance-id: tensquare-base-19001
+    instance-id: tensquare-base-9001
 
 info:
   app.name: --tensquare--
