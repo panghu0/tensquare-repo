@@ -8,7 +8,7 @@ spring:
     host: 192.168.0.100
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.0.100:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://192.168.0.105:3306/tensquare_base?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: root
   jpa:
