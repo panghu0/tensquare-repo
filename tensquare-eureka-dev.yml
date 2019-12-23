@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: tensquare-eureka
-  rabbitmq:
-    host: 192.168.0.100
 
 eureka:
   client:
