@@ -1,0 +1,33 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: tensquare-friend
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_friend?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-friend-9010
+
+jwt:
+  config:
+    key: panghu
+    ttl: 3600000
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

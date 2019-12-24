@@ -1,0 +1,35 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: tensquare-gathering
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_gathering?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+  redis:
+    host: 192.168.0.100
+    port: 6379
+    password: password
+  cache:
+    type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-gathering-9005
+
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

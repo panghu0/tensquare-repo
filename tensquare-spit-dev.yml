@@ -1,0 +1,43 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: tensquare-spit
+  data:
+    mongodb:
+      host: 192.168.0.100
+      port: 27017
+      #认证的库
+      authentication-database: admin
+      #操作的库
+      database: spitdb
+      username: admin
+      password: admin
+  redis:
+    host: 192.168.0.100
+    port: 6379
+    password: password
+  cache:
+    type: redis
+
+jwt:
+  config:
+    key: panghu
+    ttl: 3600000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-spit-9006
+
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

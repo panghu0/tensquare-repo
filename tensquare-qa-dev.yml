@@ -1,0 +1,37 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: tensquare-qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_qa?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+
+jwt:
+  config:
+    key: panghu
+    ttl: 3600000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-qa-9003
+
+feign:
+  hystrix:
+    enabled: true
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

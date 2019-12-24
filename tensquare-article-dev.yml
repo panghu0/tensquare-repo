@@ -1,0 +1,45 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: tensquare-article
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.100:3306/tensquare_article?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+  redis:
+    host: 192.168.0.100
+    port: 6379
+    password: password
+  data:
+    mongodb:
+      host: 192.168.0.100
+      port: 27017
+      #认证的库
+      authentication-database: admin
+      #操作的库
+      database: commentdb
+      username: admin
+      password: admin
+  cache:
+    type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-article-9004
+
+
+info:
+  app.name: tensquare
+  company.name: www.panghu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
