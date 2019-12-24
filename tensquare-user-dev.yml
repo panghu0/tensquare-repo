@@ -1,9 +1,9 @@
+server:
+  port: 9008
+
 spring:
   application:
     name: tensquare-user
-  profiles:
-    active:
-      - dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.0.100:3306/tensquare_user?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
@@ -33,6 +33,7 @@ eureka:
       defaultZone: http://localhost:6868/eureka
   instance:
     prefer-ip-address: true
+    instance-id: tensquare-user-9008
 
 
 info:
@@ -40,24 +41,3 @@ info:
   company.name: www.panghu.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
----
-server:
-  port: 9008
-
-spring:
-  profiles: dev
-
-eureka:
-  instance:
-    instance-id: tensquare-user-9008
-
----
-server:
-  port: 19008
-
-spring:
-  profiles: test
-
-eureka:
-  instance:
-    instance-id: tensquare-user-19008

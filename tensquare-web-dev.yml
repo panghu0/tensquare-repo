@@ -1,21 +1,9 @@
+server:
+  port: 9012
+
 spring:
   application:
-    name: tensquare-manager
-  profiles:
-    active:
-      - dev
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:6868/eureka/
-  instance:
-    prefer-ip-address: true
-
-jwt:
-  config:
-    key: panghu
-    ttl: 3600000
+    name: tensquare-web
 
 zuul:
   ignored-services: "*"
@@ -45,29 +33,22 @@ zuul:
       path: /user/** #配置请求URL的请求规则
       serviceId: tensquare‐user #指定Eureka注册中心中的服务id
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: tensquare-web-9012
+
+jwt:
+  config:
+    key: panghu
+    ttl: 3600000
+
 info:
   app.name: tensquare
   company.name: www.panghu.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
----
-server:
-  port: 9011
 
-spring:
-  profiles: dev
-
-eureka:
-  instance:
-    instance-id: tensquare-manager-9001
-
----
-server:
-  port: 19011
-
-spring:
-  profiles: test
-
-eureka:
-  instance:
-    instance-id: tensquare-manager-19001
